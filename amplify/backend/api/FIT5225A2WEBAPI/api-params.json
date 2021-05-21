@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/items",
+      "lambdaFunction": "FITA2WEBLAMB",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/items"
+    }
+  ],
+  "resourceName": "FIT5225A2WEBAPI",
+  "apiName": "FIT5225A2WEBAPI",
+  "functionArns": [
+    {
+      "lambdaFunction": "FITA2WEBLAMB"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-fit5225a2web-dev-91643-authRole",
+    "unAuthRoleName": "amplify-fit5225a2web-dev-91643-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "FITA2WEBLAMB",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

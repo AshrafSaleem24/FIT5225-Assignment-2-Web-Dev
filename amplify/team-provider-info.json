@@ -10,6 +10,17 @@
       "StackName": "amplify-fit5225a2web-dev-91643",
       "StackId": "arn:aws:cloudformation:us-east-1:569231303657:stack/amplify-fit5225a2web-dev-91643/a15b23d0-ba8a-11eb-8721-0ea3a6460f01",
       "AmplifyAppId": "d1ubhz3pl3er0j"
+    },
+    "categories": {
+      "function": {
+        "FITA2WEBLAMB": {
+          "deploymentBucketName": "amplify-fit5225a2web-dev-91643-deployment",
+          "s3Key": "amplify-builds/FITA2WEBLAMB-6566696b483849614151-build.zip"
+        }
+      },
+      "auth": {
+        "fit5225a2weba54c9656": {}
+      }
     }
   }
 }
