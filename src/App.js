@@ -26,6 +26,23 @@ Amplify.configure(awsconfig);
 const AuthStateApp = () => {
   const [authState, setAuthState] = React.useState();
   const [user, setUser] = React.useState();
+  const styles_outer = {
+    display: 'table',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    height: '100%',
+    width: '100%',
+  }
+  const styles_middle = {
+    display: 'table-cell',
+    verticalAlign: 'middle',
+  }
+  const styles_inner = {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '400px',
+  }
 
   React.useEffect(() => {
     return onAuthUIStateChange((nextAuthState, authData) => {
@@ -35,24 +52,34 @@ const AuthStateApp = () => {
   }, []);
 
   return authState === AuthState.SignedIn && user ? (
-    <div className="App">
-      <div>Hello, {user.username}</div>
-      <Router>
-        <div>
-          <Link to="/">Home</Link>{' '}
-          <Link to={{ pathname: '/Upload' }}>Upload Image</Link>{' '}
-          <Link to={{ pathname: '/Queries' }}>Queries</Link>{' '}
+    <div className="App" style={styles_outer}>
+      <div style={styles_middle}>
+        <div style={styles_inner}>
+          <div style={{ marginBottom: "50px", fontSize: "24px" }}>Hello, {user.username}</div>
+          <Router>
+            <div>
+              <Link to="/">
+                <button type="button">Home</button>
+              </Link>{' '}
+              <Link to={{ pathname: '/Upload' }}>
+                <button type="button">Upload Image</button>
+              </Link>{' '}
+              <Link to={{ pathname: '/Queries' }}>
+                <button type="button">Queries</button>
+              </Link>{' '}
 
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/upload" component={Upload} />
-            <Route exact path="/queries" component={Queries} />
-            <Route render={() => <h1>Page not found</h1>} />
-          </Switch>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/home" component={Home} />
+                <Route exact path="/upload" component={Upload} />
+                <Route exact path="/queries" component={Queries} />
+                <Route render={() => <h1>Page not found</h1>} />
+              </Switch>
+            </div>
+          </Router>
+          <div style={{ width: '200px', margin: '0 auto' }}> <AmplifySignOut /> </div>
         </div>
-      </Router>
-      <div style={{width:'200px', margin:'0 auto'}}> <AmplifySignOut /> </div>
+      </div>
     </div>
   ) : (
     <AmplifyAuthenticator usernameAlias="email">
