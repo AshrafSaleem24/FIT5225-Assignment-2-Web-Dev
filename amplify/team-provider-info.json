@@ -19,7 +19,12 @@
         }
       },
       "auth": {
-        "fit5225a2weba54c9656": {}
+        "fit5225a2web333d358b": {
+          "userPoolId": "us-east-1_4YooAwq9h",
+          "userPoolName": "FIT5225-Assignment-2-User-Pool",
+          "webClientId": "76lakkb0r7je52fj61s3brhlom",
+          "nativeClientId": "76lakkb0r7je52fj61s3brhlom"
+        }
       }
     }
   }

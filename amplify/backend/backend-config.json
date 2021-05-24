@@ -23,8 +23,9 @@
     }
   },
   "auth": {
-    "fit5225a2weba54c9656": {
+    "fit5225a2web333d358b": {
       "service": "Cognito",
+      "serviceType": "imported",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
