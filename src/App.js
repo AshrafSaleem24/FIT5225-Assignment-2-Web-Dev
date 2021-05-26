@@ -11,7 +11,7 @@ import Amplify from 'aws-amplify';
 import { AmplifyAuthenticator, AmplifySignOut, AmplifySignIn, AmplifySignUp } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from './aws-exports';
-import Upload from './upload';
+import UploadComp from './upload';
 import Queries from './Queries';
 import Home from './home';
 import {
@@ -70,8 +70,7 @@ const AuthStateApp = () => {
 
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/home" component={Home} />
-                <Route exact path="/upload" component={Upload} />
+                <Route exact path="/upload" component={UploadComp} />
                 <Route exact path="/queries" component={Queries} />
                 <Route render={() => <h1>Page not found</h1>} />
               </Switch>
