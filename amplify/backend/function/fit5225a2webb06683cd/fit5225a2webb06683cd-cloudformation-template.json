@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "FITA2WEBLAMB",
+            "fit5225a2webb06683cd",
             {
               "Fn::Join": [
                 "",
                 [
-                  "FITA2WEBLAMB",
+                  "fit5225a2webb06683cd",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "fit5225a2webLambdaRole966804cf",
+            "fit5225a2webLambdaRole2adf0a09",
             {
               "Fn::Join": [
                 "",
                 [
-                  "fit5225a2webLambdaRole966804cf",
+                  "fit5225a2webLambdaRole2adf0a09",
                   "-",
                   {
                     "Ref": "env"

@@ -1,19 +1,19 @@
 {
   "function": {
-    "FITA2WEBLAMB": {
+    "fit5225a2webb06683cd": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "api": {
-    "FIT5225A2WEBAPI": {
+    "fit5225web": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "FITA2WEBLAMB",
+          "resourceName": "fit5225a2webb06683cd",
           "attributes": [
             "Name",
             "Arn"
@@ -23,7 +23,7 @@
     }
   },
   "auth": {
-    "fit5225a2web333d358b": {
+    "fit5225a2web323da792": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",

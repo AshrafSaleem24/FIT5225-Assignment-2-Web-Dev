@@ -1,29 +1,29 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-fit5225a2web-dev-91643-authRole",
-      "UnauthRoleArn": "arn:aws:iam::569231303657:role/amplify-fit5225a2web-dev-91643-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::569231303657:role/amplify-fit5225a2web-dev-91643-authRole",
+      "AuthRoleName": "amplify-fit5225a2web-dev-70057-authRole",
+      "UnauthRoleArn": "arn:aws:iam::530317009429:role/amplify-fit5225a2web-dev-70057-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::530317009429:role/amplify-fit5225a2web-dev-70057-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-fit5225a2web-dev-91643-deployment",
-      "UnauthRoleName": "amplify-fit5225a2web-dev-91643-unauthRole",
-      "StackName": "amplify-fit5225a2web-dev-91643",
-      "StackId": "arn:aws:cloudformation:us-east-1:569231303657:stack/amplify-fit5225a2web-dev-91643/a15b23d0-ba8a-11eb-8721-0ea3a6460f01",
-      "AmplifyAppId": "d1ubhz3pl3er0j"
+      "DeploymentBucketName": "amplify-fit5225a2web-dev-70057-deployment",
+      "UnauthRoleName": "amplify-fit5225a2web-dev-70057-unauthRole",
+      "StackName": "amplify-fit5225a2web-dev-70057",
+      "StackId": "arn:aws:cloudformation:us-east-1:530317009429:stack/amplify-fit5225a2web-dev-70057/7ce37d70-be65-11eb-8f9f-12217e59f19f",
+      "AmplifyAppId": "dv7rudtak49nf"
     },
     "categories": {
       "function": {
-        "FITA2WEBLAMB": {
-          "deploymentBucketName": "amplify-fit5225a2web-dev-91643-deployment",
-          "s3Key": "amplify-builds/FITA2WEBLAMB-6566696b483849614151-build.zip"
+        "fit5225a2webb06683cd": {
+          "deploymentBucketName": "amplify-fit5225a2web-dev-70057-deployment",
+          "s3Key": "amplify-builds/fit5225a2webb06683cd-6f76754a7365622b6242-build.zip"
         }
       },
       "auth": {
-        "fit5225a2web333d358b": {
-          "userPoolId": "us-east-1_4YooAwq9h",
-          "userPoolName": "FIT5225-Assignment-2-User-Pool",
-          "webClientId": "76lakkb0r7je52fj61s3brhlom",
-          "nativeClientId": "76lakkb0r7je52fj61s3brhlom"
+        "fit5225a2web323da792": {
+          "userPoolId": "us-east-1_DdxQI2Roq",
+          "userPoolName": "FIT5225-A2-USER-POOL",
+          "webClientId": "7a9k0ku7kd2pb6v7j96r4bmht3",
+          "nativeClientId": "7a9k0ku7kd2pb6v7j96r4bmht3"
         }
       }
     }

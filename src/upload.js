@@ -15,12 +15,12 @@ class UploadComp extends React.Component {
 
     onChange = (e) => {
         console.log("file to upload:", e.target.files[0])
-        let file = e.target.files[0]
+        this.file = e.target.files[0]
 
-        if (file) {
+        if (this.file) {
             const reader = new FileReader();
             reader.onload = this._handleReaderLoaded.bind(this)
-            reader.readAsBinaryString(file)
+            reader.readAsBinaryString(this.file)
         }
     }
 
@@ -33,22 +33,13 @@ class UploadComp extends React.Component {
 
     onFileSubmit = (e) => {
         e.preventDefault()
-        console.log("binary string:", this.state.base64TextString)
-
-        const apiName = 'FIT5225A2WEBAPI'; // replace this with your api name.
-        const path = '/dev/testupload'; //replace this with the path you have configured on your API
+        //console.log("binary string:", this.state.base64TextString)
+        console.log("binary string:", this.file.name)
+        const apiName = 'fit5225web'; // replace this with your api name.
+        const path = '/test'; //replace this with the path you have configured on your API
         const myInit = {
-            body: {}, // replace this with attributes you need
+            body: {name:this.file.name, file:this.state.base64TextString}, // replace this with attributes you need
             headers: {
-                "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,X-Amz-Security-Token,Authorization,X-Api-Key,X-Requested-With,Accept,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Access-Control-Allow-Headers",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT",
-                "X-Requested-With": "*"   
-            //"Access-Control-Allow-Origin":"*", 
-            //"Access-Control-Allow-Headers" : "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
-            //"Access-Control-Allow-Headers" : "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
-             //"Access-Control-Allow-Credentials" : true,
-            //"Access-Control-Allow-Methods": "OPTIONS,POST"
         }, // OPTIONAL
         };
 
@@ -66,6 +57,8 @@ class UploadComp extends React.Component {
         return (
             <React.Fragment>
                 <div style={this.upload_style}>
+                    <h2> Upload Page </h2>
+                    <p> Please submit the file you would like to use for the upload option</p>
                     <form onSubmit={(e) => this.onFileSubmit(e)} onChange={(e) => this.onChange(e)}>
                         <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" />
 

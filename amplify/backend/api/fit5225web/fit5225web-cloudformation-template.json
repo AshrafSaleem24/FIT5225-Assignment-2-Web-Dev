@@ -8,15 +8,15 @@
         },
     
     
-          "functionFITA2WEBLAMBName": {
+          "functionfit5225a2webb06683cdName": {
             "Type": "String",
-            "Default": "functionFITA2WEBLAMBName"
+            "Default": "functionfit5225a2webb06683cdName"
           },
 
           
-          "functionFITA2WEBLAMBArn": {
+          "functionfit5225a2webb06683cdArn": {
             "Type": "String",
-            "Default": "functionFITA2WEBLAMBArn"
+            "Default": "functionfit5225a2webb06683cdArn"
           }
 
           
@@ -37,16 +37,16 @@
         
         
         
-      "FIT5225A2WEBAPI": {
+      "fit5225web": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "FIT5225A2WEBAPI",
+          "Name": "fit5225web",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "FIT5225A2WEBAPI"
+              "title": "fit5225web"
             },
             "host": {
                 "Fn::Join": [
@@ -168,7 +168,7 @@
                             
                             {
 
-                                "Ref": "functionFITA2WEBLAMBArn"
+                                "Ref": "functionfit5225a2webb06683cdArn"
                             },
                             
                             "/invocations"
@@ -267,7 +267,7 @@
                           
                           {
 
-                            "Ref": "functionFITA2WEBLAMBArn"
+                            "Ref": "functionfit5225a2webb06683cdArn"
                           },
                           
                           "/invocations"
@@ -324,12 +324,12 @@
       
         
 
-        "functionFITA2WEBLAMBPermissionFIT5225A2WEBAPI": {
+        "functionfit5225a2webb06683cdPermissionfit5225web": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functionFITA2WEBLAMBName"
+                        "Ref":  "functionfit5225a2webb06683cdName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -348,7 +348,7 @@
                             },
                             ":",
                             {
-                                "Ref": "FIT5225A2WEBAPI"
+                                "Ref": "fit5225web"
                             },
                             "/*/*/*"
                         ]
@@ -359,7 +359,7 @@
         
         
 
-      "DeploymentAPIGWFIT5225A2WEBAPI": {
+      "DeploymentAPIGWfit5225web": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -373,7 +373,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "FIT5225A2WEBAPI"
+            "Ref": "fit5225web"
           }
         }
       }
@@ -381,15 +381,15 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "FIT5225A2WEBAPI"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "fit5225web"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "FIT5225A2WEBAPI"
+          "Value": "fit5225web"
         },
         "ApiId": {
           "Description": "API ID (prefix of API URL)",
-          "Value": {"Ref": "FIT5225A2WEBAPI"}
+          "Value": {"Ref": "fit5225web"}
         }
     }
   }

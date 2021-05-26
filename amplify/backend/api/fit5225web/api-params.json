@@ -2,30 +2,30 @@
   "paths": [
     {
       "name": "/items",
-      "lambdaFunction": "FITA2WEBLAMB",
+      "lambdaFunction": "fit5225a2webb06683cd",
       "privacy": {
         "open": true
       },
       "policyResourceName": "/items"
     }
   ],
-  "resourceName": "FIT5225A2WEBAPI",
-  "apiName": "FIT5225A2WEBAPI",
+  "resourceName": "fit5225web",
+  "apiName": "fit5225web",
   "functionArns": [
     {
-      "lambdaFunction": "FITA2WEBLAMB"
+      "lambdaFunction": "fit5225a2webb06683cd"
     }
   ],
   "privacy": {
     "auth": 0,
     "unauth": 0,
-    "authRoleName": "amplify-fit5225a2web-dev-91643-authRole",
-    "unAuthRoleName": "amplify-fit5225a2web-dev-91643-unauthRole"
+    "authRoleName": "amplify-fit5225a2web-dev-70057-authRole",
+    "unAuthRoleName": "amplify-fit5225a2web-dev-70057-unauthRole"
   },
   "dependsOn": [
     {
       "category": "function",
-      "resourceName": "FITA2WEBLAMB",
+      "resourceName": "fit5225a2webb06683cd",
       "attributes": [
         "Name",
         "Arn"
