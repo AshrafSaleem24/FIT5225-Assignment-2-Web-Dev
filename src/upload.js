@@ -36,7 +36,7 @@ class UploadComp extends React.Component {
         //console.log("binary string:", this.state.base64TextString)
         console.log("binary string:", this.file.name)
         const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/test'; //replace this with the path you have configured on your API
+        const path = '/upload-on-s3-function'; //replace this with the path you have configured on your API
         const myInit = {
             body: {name:this.file.name, file:this.state.base64TextString}, // replace this with attributes you need
             headers: {

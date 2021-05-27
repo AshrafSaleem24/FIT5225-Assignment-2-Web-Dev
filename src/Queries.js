@@ -64,6 +64,7 @@ class QueryComp extends React.Component {
                         <input type="submit" />
                     </form>
                 </div>
+                
             </React.Fragment>
         )
     }
