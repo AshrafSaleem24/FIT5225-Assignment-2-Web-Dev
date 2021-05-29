@@ -13,6 +13,7 @@ import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from './aws-exports';
 import UploadComp from './upload';
 import Queries from './Queries';
+import TroubleshootComp from './troubleshoot'
 import Home from './home';
 import {
   BrowserRouter as Router,
@@ -68,11 +69,15 @@ const AuthStateApp = () => {
               <Link to={{ pathname: '/Queries' }}>
                 <button type="button">Queries</button>
               </Link>{' '}
+              <Link to={{ pathname: '/Troubleshoot' }}>
+                <button type="button">Troubleshoot</button>
+              </Link>{' '}
 
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/upload" component={UploadComp} />
                 <Route exact path="/queries" component={Queries} />
+                <Route exact path="/troubleshoot" component={TroubleshootComp} />
                 <Route render={() => <h1>Page not found</h1>} />
               </Switch>
             </div>

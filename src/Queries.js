@@ -39,7 +39,7 @@ class QueryComp extends React.Component {
         //console.log("binary string:", this.state.base64TextString)
         console.log("binary string:", this.file.name)
         const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/test'; //replace this with the path you have configured on your API
+        const path = '/find-by-image-function'; //replace this with the path you have configured on your API
         const myInit = {
             body: { name: this.file.name, file: this.state.base64TextString }, // replace this with attributes you need
             headers: {
@@ -51,11 +51,12 @@ class QueryComp extends React.Component {
             .then(response => {
                 // Add your code here
                 console.log(response.status);
+                alert("Submission of file name: " + this.file.name + " was successful.");
             })
             .catch(error => {
                 console.log(error.response);
             });
-            alert("Submission of file name: " + this.file.name + " was successful.");
+        
     }
 
     onChangeFindTags = (e) => {
@@ -67,7 +68,7 @@ class QueryComp extends React.Component {
         e.preventDefault()
         //console.log("binary string:", this.state.base64TextString)
         const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/test'; //replace this with the path you have configured on your API
+        const path = '/find-by-tags-function'; //replace this with the path you have configured on your API
         const myInit = {
             body: { tags: this.findTagsValue }, // replace this with attributes you need
             headers: {
@@ -79,11 +80,12 @@ class QueryComp extends React.Component {
             .then(response => {
                 // Add your code here
                 console.log(response.status);
+                alert(response["message"]);
             })
             .catch(error => {
                 console.log(error.response);
             });
-        alert("Submission of tags for find by tags function has been completed.");
+        
     }
 
     onChangeAddTagsUrl = (e) => {
@@ -101,7 +103,7 @@ class QueryComp extends React.Component {
         e.preventDefault()
         //console.log("binary string:", this.state.base64TextString)
         const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/test'; //replace this with the path you have configured on your API
+        const path = '/add-delete'; //replace this with the path you have configured on your API
         const myInit = {
             body: { url: this.addTagsUrl, tags: this.addTextTag }, // replace this with attributes you need
             headers: {
@@ -129,7 +131,7 @@ class QueryComp extends React.Component {
         e.preventDefault()
         //console.log("binary string:", this.state.base64TextString)
         const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/test'; //replace this with the path you have configured on your API
+        const path = '/add-delete'; //replace this with the path you have configured on your API
         const myInit = {
             body: {url: this.deleteUrl }, // replace this with attributes you need
             headers: {
