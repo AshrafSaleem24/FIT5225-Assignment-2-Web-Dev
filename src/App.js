@@ -57,7 +57,6 @@ const AuthStateApp = () => {
     <div className="App" style={styles_outer}>
       <div style={styles_middle}>
         <div style={styles_inner}>
-          <div style={{ marginBottom: "50px", fontSize: "24px" }}>Hello, {user.attributes.given_name}</div>
           <Router>
             <div>
               <Link to="/">

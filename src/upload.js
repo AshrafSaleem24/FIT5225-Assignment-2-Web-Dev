@@ -52,6 +52,7 @@ class UploadComp extends React.Component {
             .catch(error => {
                 console.log(error.response);
             });
+            alert("Submission of file name: " + this.file.name + " was successful.");
     }
     render() {
         return (
