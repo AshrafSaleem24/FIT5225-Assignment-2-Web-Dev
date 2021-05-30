@@ -35,6 +35,12 @@ class TroubleshootComp extends React.Component {
                 <p>
                     Please ensure you click the alert box or try sending the request again. This may have occured as the acknowledgement from the pop up box may trigger a send request.
                 </p>
+                <h3>
+                    Deletion is not deleting the file
+                </h3>
+                <p>
+                    Please ensure you have pasted the correct link, in the event you copied it from a pop-box, it may contain a , at the back for mulitple lines. Please ensure the , is deleted.
+                </p>
                 
             </React.Fragment>
         )
