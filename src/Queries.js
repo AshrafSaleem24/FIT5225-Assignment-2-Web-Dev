@@ -51,7 +51,7 @@ class QueryComp extends React.Component {
             .then(response => {
                 // Add your code here
                 console.log(response.status);
-                alert("Submission of file name: " + this.file.name + " was successful.");
+                alert(response["links"]);
             })
             .catch(error => {
                 console.log(error.response);
@@ -80,7 +80,7 @@ class QueryComp extends React.Component {
             .then(response => {
                 // Add your code here
                 console.log(response.status);
-                alert(response["message"]);
+                alert(response["links"]);
             })
             .catch(error => {
                 console.log(error.response);
@@ -131,7 +131,7 @@ class QueryComp extends React.Component {
         e.preventDefault()
         //console.log("binary string:", this.state.base64TextString)
         const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/add-delete'; //replace this with the path you have configured on your API
+        const path = '/delete'; //replace this with the path you have configured on your API
         const myInit = {
             body: {url: this.deleteUrl }, // replace this with attributes you need
             headers: {
