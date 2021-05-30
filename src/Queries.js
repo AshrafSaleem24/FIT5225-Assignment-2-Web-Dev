@@ -36,20 +36,18 @@ class QueryComp extends React.Component {
 
     onFileSubmit = (e) => {
         e.preventDefault()
-        //console.log("binary string:", this.state.base64TextString)
         console.log("binary string:", this.file.name)
-        const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/find-by-image-function'; //replace this with the path you have configured on your API
+        const apiName = 'fit5225web'; 
+        const path = '/find-by-image-function'; 
         const myInit = {
-            body: { name: this.file.name, file: this.state.base64TextString }, // replace this with attributes you need
+            body: { name: this.file.name, file: this.state.base64TextString },
             headers: {
-            }, // OPTIONAL 
+            }, 
         };
 
         API
             .post(apiName, path, myInit)
             .then(response => {
-                // Add your code here
                 console.log(response.status);
                 alert(response["links"]);
             })
@@ -66,19 +64,17 @@ class QueryComp extends React.Component {
 
     onFindTagsSubmit = (e) => {
         e.preventDefault()
-        //console.log("binary string:", this.state.base64TextString)
-        const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/find-by-tags-function'; //replace this with the path you have configured on your API
+        const apiName = 'fit5225web'; 
+        const path = '/find-by-tags-function'; 
         const myInit = {
-            body: { tags: this.findTagsValue }, // replace this with attributes you need
+            body: { tags: this.findTagsValue },
             headers: {
-            }, // OPTIONAL 
+            }, 
         };
 
         API
             .post(apiName, path, myInit)
             .then(response => {
-                // Add your code here
                 console.log(response.status);
                 alert(response["links"]);
             })
@@ -101,19 +97,17 @@ class QueryComp extends React.Component {
 
     onAddTagsSubmit = (e) => {
         e.preventDefault()
-        //console.log("binary string:", this.state.base64TextString)
-        const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/add-delete'; //replace this with the path you have configured on your API
+        const apiName = 'fit5225web'; 
+        const path = '/add-delete'; 
         const myInit = {
-            body: { url: this.addTagsUrl, tags: this.addTextTag }, // replace this with attributes you need
+            body: { url: this.addTagsUrl, tags: this.addTextTag }, 
             headers: {
-            }, // OPTIONAL 
+            },  
         };
 
         API
             .post(apiName, path, myInit)
             .then(response => {
-                // Add your code here
                 console.log(response.status);
             })
             .catch(error => {
@@ -129,19 +123,17 @@ class QueryComp extends React.Component {
 
     onDeleteSubmit = (e) => {
         e.preventDefault()
-        //console.log("binary string:", this.state.base64TextString)
-        const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/delete'; //replace this with the path you have configured on your API
+        const apiName = 'fit5225web'; 
+        const path = '/delete'; 
         const myInit = {
-            body: {url: this.deleteUrl }, // replace this with attributes you need
+            body: {url: this.deleteUrl }, 
             headers: {
-            }, // OPTIONAL 
+            }, 
         };
 
         API
             .post(apiName, path, myInit)
             .then(response => {
-                // Add your code here
                 console.log(response.status);
             })
             .catch(error => {
@@ -155,9 +147,15 @@ class QueryComp extends React.Component {
             <React.Fragment>
                 <div style={this.upload_style}>
                     <h2> Query Page </h2>
+                    <p>
+                        When using the Find By Image or Find By Tags function please wait until a pop-up box appears with the link/links are returned by the server.
+                    </p>
+                    <p>
+                        In the event they are no matching images, the server will return a pop-up box with no links. Please ensure you close all pop up boxes !
+                    </p>
                     <div style={this.upload_style}>
                         <h3> Find By Image </h3>
-                        <p> Please submit the file you would like to use for the query option</p>
+                        <p> Please submit the file you would like to use for the query option.</p>
                         <form onSubmit={(e) => this.onFileSubmit(e)} onChange={(e) => this.onChange(e)}>
                             <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg, .txt" />
 
@@ -166,8 +164,8 @@ class QueryComp extends React.Component {
                     </div>
 
                     <div style={this.upload_style}>
-                        <h3> Find By Tages </h3>
-                        <p> Please enter the tags you want and use , to seperate the tags</p>
+                        <h3> Find By Tags </h3>
+                        <p> Please enter the tags you want and use , to seperate the tags.</p>
                         <form onSubmit={(e) => this.onFindTagsSubmit(e)}>
                             <textarea name="findtagstext" placeholder="Enter tags" onChange={(e) => this.onChangeFindTags(e)} />
 
@@ -177,8 +175,8 @@ class QueryComp extends React.Component {
 
                     <div style={this.upload_style}>
                         <h3> Add Tages </h3>
-                        <p> Please enter the url first, then the tags you wish. Use , to seperate each tags and the url</p>
-                        <p> Example: url,tag1,tag2,tag3</p>
+                        <p> Please enter the url first, then the tags you wish. Use , to seperate each tags and the url.</p>
+                        <p> Example: url,tag1,tag2,tag3.</p>
                         <form onSubmit={(e) => this.onAddTagsSubmit(e)}>
                             <textarea name="addtagtext" placeholder="Enter tags to add" onChange={(e) => this.onChangeAddTagsUrl(e)} />
                             
@@ -188,6 +186,7 @@ class QueryComp extends React.Component {
 
                     <div style={this.upload_style}>
                         <h3> Delete Image</h3>
+                        <p> Please enter the URL to the image you wish to delete.</p>
                         <form  onSubmit={(e) => this.onDeleteSubmit(e)}>
                             <input type="text" placeholder="Enter url" onChange={(e) => this.onChangeDeleteTags(e)}/>
 

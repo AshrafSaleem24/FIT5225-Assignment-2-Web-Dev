@@ -33,20 +33,18 @@ class UploadComp extends React.Component {
 
     onFileSubmit = (e) => {
         e.preventDefault()
-        //console.log("binary string:", this.state.base64TextString)
         console.log("binary string:", this.file.name)
-        const apiName = 'fit5225web'; // replace this with your api name.
-        const path = '/upload-on-s3-function'; //replace this with the path you have configured on your API
+        const apiName = 'fit5225web'; 
+        const path = '/upload-on-s3-function'; 
         const myInit = {
-            body: {name:this.file.name, file:this.state.base64TextString}, // replace this with attributes you need
+            body: {name:this.file.name, file:this.state.base64TextString}, 
             headers: {
-        }, // OPTIONAL
+        }, 
         };
 
         API
             .post(apiName, path, myInit)
             .then(response => {
-                // Add your code here
                 console.log(response.status);
             })
             .catch(error => {
@@ -59,7 +57,7 @@ class UploadComp extends React.Component {
             <React.Fragment>
                 <div style={this.upload_style}>
                     <h2> Upload Page </h2>
-                    <p> Please submit the file you would like to use for the upload option</p>
+                    <p> Please submit the file you would like to use for the upload option and please ensure you close all pop up boxes !</p>
                     <form onSubmit={(e) => this.onFileSubmit(e)} onChange={(e) => this.onChange(e)}>
                         <input type="file" name="image" id="file" accept=".jpeg, .png, .jpg" />
 
